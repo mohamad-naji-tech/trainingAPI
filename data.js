@@ -7,30 +7,17 @@
 
 //app.listen(3000)
 const express = require("express");
+const cors=require ('cors')
 const app = express();
+const xlsx=require('xlsx');
+const wb=xlsx.readFile('teams.xlsx');
+const ws=wb.Sheets["teams"];
+let data=xlsx.utils.sheet_to_json(ws);
 const PORT = process.env.PORT || 3030;
 
 app.get('/', function (req, res) {
   res.send('Hello World')})
   app.get('/students', function (req, res) {
-    var data=[{
-      id:1,
-      name:'mohamad mohamad',
-      adress:'aydamoun ',
-
-
-    },
-{id:2,
-    name:'adonis',
-    adress:'bekaa'
-
-    
-},
-{
-    id:3,
-    name:"yehya",
-    adress:'saida',
-}]
     res.send(data)});
 // your code
 
