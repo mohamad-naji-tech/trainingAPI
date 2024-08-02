@@ -13,6 +13,7 @@ const xlsx=require('xlsx');
 const wb=xlsx.readFile('teams.xlsx');
 const ws=wb.Sheets["teams"];
 let data=xlsx.utils.sheet_to_json(ws);
+app.use(cors());
 const PORT = process.env.PORT || 3030;
 
 app.get('/', function (req, res) {
