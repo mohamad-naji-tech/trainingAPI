@@ -16,8 +16,8 @@ let data=xlsx.utils.sheet_to_json(ws);
 app.use(cors());
 const PORT = process.env.PORT || 3030;
 
-app.get('/', function (req, res) {
-  res.send('Hello World')})
+//app.get('/', function (req, res) {
+  //res.send('Hello World')})
   app.get('/students', function (req, res) {
     res.send(data)});
 // your code
